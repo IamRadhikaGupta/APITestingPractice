@@ -1,3 +1,5 @@
+package GETCalls;
+
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 

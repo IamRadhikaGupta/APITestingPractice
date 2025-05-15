@@ -1,11 +1,12 @@
+package GETCalls;
+
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class GETWithJsonBodyExtract {
+public class AnotherApproachGETWithJsonBodyExtract {
 
     @Test
     public void getUserAPI_With_Extract_Body_withJson() {
@@ -19,11 +20,12 @@ public class GETWithJsonBodyExtract {
                 extract().response();
 
 
-        JsonPath js = response.jsonPath();
+        int userId = response.path("id");
+        String email=response.path("email");
 
 
-        System.out.println(js.getInt("id"));
-        System.out.println(js.getString("email"));
+        System.out.println(userId);
+        System.out.println(email);
 
 
     }

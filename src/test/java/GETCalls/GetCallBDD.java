@@ -1,3 +1,5 @@
+package GETCalls;
+
 import static io.restassured.RestAssured.*;
 import static org.apache.commons.lang3.BooleanUtils.and;
 import static org.apache.hc.core5.http.message.MessageSupport.header;
@@ -15,7 +17,7 @@ public class GetCallBDD {
     @Test
     public void test_numberOfCircuits(){
         given().log().all().
-                when().
+                when().log().all().
                    get("http://ergast.com/api/f1/2017/circuits.json").
                 then().log().all().
                    assertThat().statusCode(200).
